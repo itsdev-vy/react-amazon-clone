@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 const Cart = () => {
     return (
@@ -9,4 +9,4 @@ const Cart = () => {
 
 export default Cart;
 
-const Container = styled.div``;
+// const Container = styled.div``;

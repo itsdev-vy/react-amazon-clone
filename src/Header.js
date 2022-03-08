@@ -10,7 +10,9 @@ const Header = () => {
     return (
         <Container>
             <HeaderLogo>
-                <img src={"https://i.imgur.com/7I9Was5.png"} alt="" />
+                <Link to='/'>
+                    <img src={"https://i.imgur.com/7I9Was5.png"} alt="" />
+                </Link>
             </HeaderLogo>
 
             <HeaderOptionAddress>
@@ -53,12 +55,13 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
- height:60px;
- background-color: #0F1111;
- display:flex;
- align-items:center;
- justify-content:space-between;
- color:white;
+
+    height:60px;
+    background-color: #0F1111;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:white;
 `;
 
 const HeaderLogo = styled.div`
