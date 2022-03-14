@@ -6,7 +6,18 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Link } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({ cartItems }) => {
+
+    const getCount = () => {
+        let count = 0;
+        //loop through all cart items
+        cartItems.forEach((item) => {
+            //add the quantity of the cart item to total
+            count += item.product.quantity;
+        })
+        return count;
+    }
+
     return (
         <Container>
             <HeaderLogo>
@@ -43,7 +54,7 @@ const Header = () => {
                 <HeaderOptionCart>
                     <Link to='/cart'>
                         <ShoppingBasketIcon />
-                        <CartCount>7</CartCount>
+                        <CartCount>{getCount()}</CartCount>
                     </Link>
                 </HeaderOptionCart>
 
@@ -139,7 +150,9 @@ const HeaderOptionCart = styled.div`
 `;
 
 const CartCount = styled.div`
-    padding-left: 9px
+    padding-left: 4px;
+    font-weight:700;
+    color:#f08804;  
 `;
 
 
