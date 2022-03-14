@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { db } from './firebase';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.css';
 import Header from './Header';
 import Cart from './Cart';
 import Home from './Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -29,6 +31,9 @@ function App() {
       <div className="App">
         <Header cartItems={cartItems} />
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/cart">
             <Cart cartItems={cartItems} />
           </Route>
