@@ -6,7 +6,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Link } from 'react-router-dom';
 
 
-const Header = ({ cartItems }) => {
+const Header = ({ cartItems, user, signOut }) => {
 
     const getCount = () => {
         let count = 0;
@@ -29,7 +29,7 @@ const Header = ({ cartItems }) => {
             <HeaderOptionAddress>
                 <LocationOnIcon />
                 <HeaderOption>
-                    <OptionLineOne>Hello,</OptionLineOne>
+                    <OptionLineOne>Hello</OptionLineOne>
                     <OptionLineTwo>Select Your Address</OptionLineTwo>
                 </HeaderOption>
             </HeaderOptionAddress>
@@ -42,8 +42,8 @@ const Header = ({ cartItems }) => {
             </HeaderSearch>
 
             <HeaderNavItems>
-                <HeaderOption>
-                    <OptionLineOne>Hello Nazariy</OptionLineOne>
+                <HeaderOption onClick={signOut}>
+                    <OptionLineOne>Hello, {user.name}</OptionLineOne>
                     <OptionLineTwo>Account & Lists</OptionLineTwo>
                 </HeaderOption>
                 <HeaderOption>
@@ -136,6 +136,7 @@ const HeaderNavItems = styled.div`
 
 const HeaderOption = styled.div`
     padding: 10px 9px 10px 9px;
+    cursor: pointer;
 `;
 
 const HeaderOptionCart = styled.div`
